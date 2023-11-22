@@ -2,11 +2,11 @@ const container = document.getElementById("text-container");
 
 const lines = [
     { text: "Недвижимость:", tag: "<strong><u>" },
-     "    Экспертиза и управление недвижимыми активами",
-     "    Участие в электронных торгах (ФЗ №127, ФЗ №159,ФЗ №229)",
-     "    Readivelopment",
-     "    Портфельные инвестиции",
-     "    Франчайзинг",
+    "    Экспертиза и управление недвижимыми активами",
+    "    Участие в электронных торгах (ФЗ №127, ФЗ №159,ФЗ №229)",
+    "    Readivelopment",
+    "    Портфельные инвестиции",
+    "    Франчайзинг",
     "    Юридическая экспертиза в области недвижимости",
     "    Финансовый анализ и моделирование",
     "    Стратегическое планирование и консалтинг",
@@ -20,12 +20,11 @@ const lines = [
     "    Лицензирование профессионального программного обеспечения",
     "    Оформления подписок на иностранные программные продукты",
     "    Разработка систем контроля", 
-    "    Blockchain and Cryptocurrency - Market Asset Transactions", 
+    "    Blockchain and Cryptocurrency - Market Asset Transactions"
 ];
 
 let currentLine = 0;
 let index = 0;
-let isTag = false;
 
 function typeWriter() {
     if (currentLine < lines.length) {
@@ -47,8 +46,12 @@ function typeWriter() {
             index = 0;
             currentLine++;
             setTimeout(typeWriter, 250);
+
+            // Автоматическая прокрутка вниз
+            container.lastChild.scrollIntoView({ behavior: 'smooth' });
         }
     }
 }
 
 typeWriter();
+
