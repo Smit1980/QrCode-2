@@ -1,0 +1,51 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#name {
+    font-size: 1.5em; /* Адаптивный размер */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#text-container {
+    white-space: pre-wrap;
+    text-align: left;
+    padding: 10px;
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 600px) {
+    #text-container {
+        font-size: 3vw; /* Процент от ширины экрана */
+    }
+
+    #name {
+        font-size: 5vw;
+    }
+}
+
+/* Стили для планшетов и настольных компьютеров */
+@media (min-width: 601px) {
+    #text-container {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    #name {
+        font-size: 24px;
+    }
+}
