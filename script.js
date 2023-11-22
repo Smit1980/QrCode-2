@@ -47,11 +47,12 @@ function typeWriter() {
             currentLine++;
             setTimeout(typeWriter, 250);
 
-            // Автоматическая прокрутка вниз
-            container.lastChild.scrollIntoView({ behavior: 'smooth' });
+            // Измененный метод прокрутки
+            container.scrollTop = container.scrollHeight;
         }
     }
 }
 
 typeWriter();
+
 
