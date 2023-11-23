@@ -1,7 +1,7 @@
 const container = document.getElementById("text-container");
 
 const lines = [
-    { text: "<strong><u>Недвижимость:</u></strong>", tag: true },
+    { text: "Недвижимость:", tag: "<strong><u>" },
     "   -  Экспертиза и управление недвижимыми активами",
     "   -  Участие в электронных торгах (ФЗ №127, ФЗ №159,ФЗ №229)",
     "   -  Readivelopment",
@@ -12,7 +12,7 @@ const lines = [
     "   -  Стратегическое планирование и консалтинг",
     "   -  Налоговый консалтинг, выявление и возврат налоговых переплат",
     "",
-    { text: "<strong><u>Information Technology:</u></strong>", tag: true },
+    { text: "Information Technology:", tag: "<strong><u>" },
     "   -  Разработка продуктов любой сложности",
     "   -  Создание инновационных решений",
     "   -  Уникальные AI-решения и профессиональные инструменты для автоматизации и оптимизации бизнес-процессов",
@@ -29,12 +29,9 @@ let index = 0;
 function typeWriter() {
     if (currentLine < lines.length) {
         let line = lines[currentLine];
-        if (line.tag) {
-            container.innerHTML += line.text;
-            container.innerHTML += '<br>';
-            currentLine++;
-            setTimeout(typeWriter, 250);
-            return;
+        if (typeof line === 'object') {
+            container.innerHTML += line.tag;
+            line = line.text;
         }
 
         if (index < line.length) {
@@ -42,16 +39,20 @@ function typeWriter() {
             index++;
             setTimeout(typeWriter, 25);
         } else {
+            if (typeof lines[currentLine] === 'object') {
+                container.innerHTML += "</u></strong>";
+            }
             container.innerHTML += '<br>';
             index = 0;
             currentLine++;
             setTimeout(typeWriter, 250);
 
-            // Автоматическая прокрутка вниз
+            // Измененный метод прокрутки
             container.scrollTop = container.scrollHeight;
         }
     }
 }
 
 typeWriter();
+
 
