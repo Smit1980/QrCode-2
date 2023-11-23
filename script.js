@@ -29,9 +29,12 @@ let index = 0;
 function typeWriter() {
     if (currentLine < lines.length) {
         let line = lines[currentLine];
-        if (typeof line === 'object') {
-            container.innerHTML += line.tag;
-            line = line.text;
+        if (line.tag) {
+            container.innerHTML += line.text;
+            container.innerHTML += '<br>';
+            currentLine++;
+            setTimeout(typeWriter, 250);
+            return;
         }
 
         if (index < line.length) {
@@ -39,20 +42,15 @@ function typeWriter() {
             index++;
             setTimeout(typeWriter, 25);
         } else {
-            if (typeof lines[currentLine] === 'object') {
-                container.innerHTML += "</u></strong>";
-            }
             container.innerHTML += '<br>';
             index = 0;
             currentLine++;
             setTimeout(typeWriter, 250);
 
-            // Измененный метод прокрутки
+            // Автоматическая прокрутка вниз
             container.scrollTop = container.scrollHeight;
         }
     }
 }
 
 typeWriter();
-
-
