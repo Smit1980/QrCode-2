@@ -1,4 +1,4 @@
-ody, html {
+body, html {
   margin: 0;
   padding: 0;
   color: white; /* Цвет текста */
@@ -8,8 +8,8 @@ ody, html {
 
 header {
   text-align: center;
-  margin-top: 10px; /* уменьшенный верхний отступ */
-  margin-bottom: 10px; /* уменьшенный нижний отступ */
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #name {
@@ -39,7 +39,7 @@ main {
 
   /* Скрытие элемента `header` на мобильных устройствах */
   header {
-    display: none;
+    display: block; /* Изменено на 'block' для отображения на мобильных устройствах */
   }
 }
 
@@ -50,7 +50,6 @@ main {
     line-height: 1.2; /* Уменьшенный межстрочный интервал для улучшения читаемости */
   }
 
-  /* Отображение элемента `header` на мобильных устройствах */
   header {
     display: block;
   }
