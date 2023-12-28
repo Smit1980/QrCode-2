@@ -8,9 +8,10 @@ body, html {
 
 header {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px; /* уменьшенный верхний отступ */
+  margin-bottom: 10px; /* уменьшенный нижний отступ */
 }
+
 
 #name {
   font-size: 2em; /* Увеличенный размер для лучшей читаемости */
