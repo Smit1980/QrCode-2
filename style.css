@@ -1,45 +1,57 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    color: white; /* Цвет текста */
-    background-color: black; /* Цвет фона */
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white; /* Цвет текста */
+  background-color: black; /* Цвет фона */
+  font-family: Arial, sans-serif;
 }
 
 header {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #name {
-    font-size: 2em; /* Увеличенный размер для лучшей читаемости */
+  font-size: 2em; /* Увеличенный размер для лучшей читаемости */
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    flex-direction: column; /* Для лучшей адаптации на мобильных */
+  display: flex;
+  justify-content: center;
+  flex-direction: column; /* Для лучшей адаптации на мобильных */
 }
 
 #text-container {
-    white-space: pre-wrap;
-    text-align: left;
-    padding: 15px; /* Отступы для улучшения читаемости */
-    max-width: 800px; /* Максимальная ширина для больших экранов */
-    margin: auto; /* Центрирование */
+  white-space: pre-wrap;
+  text-align: left;
+  padding: 15px; /* Отступы для улучшения читаемости */
+  max-width: 800px; /* Максимальная ширина для больших экранов */
+  margin: auto; /* Центрирование */
 }
 
 /* Стили для мобильных устройств */
 @media (max-width: 600px) {
-    #text-container, #name {
-        font-size: 5vw; /* Увеличенный адаптивный размер шрифта для мобильных */
-    }
+  #text-container, #name {
+    font-size: 5vw; /* Увеличенный адаптивный размер шрифта для мобильных */
+    line-height: 1.5; /* Увеличенный межстрочный интервал для улучшения читаемости */
+  }
+
+  /* Скрытие элемента `header` на мобильных устройствах */
+  header {
+    display: none;
+  }
 }
 
 /* Стили для планшетов и настольных компьютеров */
 @media (min-width: 601px) {
-    #text-container, #name {
-        font-size: 18px; /* Фиксированный размер шрифта для больших экранов */
-    }
+  #text-container, #name {
+    font-size: 18px; /* Фиксированный размер шрифта для больших экранов */
+    line-height: 1.2; /* Уменьшенный межстрочный интервал для улучшения читаемости */
+  }
+
+  /* Отображение элемента `header` на мобильных устройствах */
+  header {
+    display: block;
+  }
 }
